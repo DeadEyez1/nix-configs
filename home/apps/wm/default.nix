@@ -2,11 +2,14 @@
 {
   imports = [
     ./hyprland
+    ./waybar
   ];
 
   home.packages = with pkgs; [
-    waybar
-    mako
+    dunst
+    rofi-wayland
+    pavucontrol
+    bibata-cursors
 
     libnotify
   ];

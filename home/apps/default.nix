@@ -6,5 +6,7 @@
     ./browser
     ./social
     ./dev
+    ./virt
+    ./multimedia
   ];
 }
