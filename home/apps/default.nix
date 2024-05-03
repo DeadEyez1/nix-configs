@@ -8,5 +8,6 @@
     ./dev
     ./virt
     ./multimedia
+    ./games
   ];
 }

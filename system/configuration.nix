@@ -59,19 +59,19 @@
   users.users.deadeyez = {
     isNormalUser = true;
     description = "DeadEyez";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "libvirtd" "kvm" ];
     shell = pkgs.zsh;
   };
 
   # Sound settings
   sound.enable = true;
   security.rtkit.enable = true;
+  hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
   };
 
   services.displayManager.sddm = {
@@ -81,6 +81,28 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+  };
+
+  hardware.opengl.driSupport32Bit = true;
+
+  programs.gamemode.enable = true;
+  programs.gamescope.enable = true;
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall =true;
+  };
+
+  programs.virt-manager.enable = true;
+  virtualisation = {
+    containers.enable = true;
+    spiceUSBRedirection.enable = true;
+    podman = {
+      enable = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+    waydroid.enable = true;
+    libvirtd.enable = true;
   };
 
   # Did I still need this?
@@ -107,11 +129,14 @@
   #  wget
     kitty
     xdg-utils
-    xdg-desktop-portal
     xdg-desktop-portal-gtk
-    qt5.qtwayland
-    qt6.qmake
-    qt6.qtwayland
+    xdg-desktop-portal-hyprland
+    adwaita-qt
+    adwaita-qt6
+
+    dive 
+    podman-tui
+    podman-compose
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

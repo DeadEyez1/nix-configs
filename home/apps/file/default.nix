@@ -8,5 +8,7 @@
     rar
     xarchiver
     kdePackages.dolphin
+
+    motrix
   ];
 }

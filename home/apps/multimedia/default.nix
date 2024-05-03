@@ -8,6 +8,10 @@
 
   home.packages = with pkgs; [
     stremio
+    helvum
+    ffmpeg
+    premid
+    vlc
   ];
   
 }

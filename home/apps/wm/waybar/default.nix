@@ -6,21 +6,21 @@
       "layer" = "top";
       "position" = "top";
       "height" = 28;
-      "modules-lef" = [ "custom/rofi" "hyprland/workspaces" ];
+      "modules-lef" = [ "hyprland/workspaces" ];
       "modules-center" = [ "clock" ];
       "modules-right" = [ "pulseaudio" "network" "tray" ];
       
-      "custom/rofi" = {
-        "format" = "";
-        "on-click" = "rofi -show drun";
-      };
+      # "custom/rofi" = {
+      #   "format" = "";
+      #   "on-click" = "rofi -show drun";
+      # };
 
-      "hyprland/workspace" = {
+      "hyprland/workspaces" = {
         "on-click" = "active";
-        "format" = "{icon}";
+        "format" = "<sub>{icon}</sub>";
         "all-outputs" = "false";
-        "on-scroll-up" = "hyprctl dispatch workspace e+1";
-        "on-scroll-down" = "hyprctl dispatch workspace e-1";
+        # "on-scroll-up" = "hyprctl dispatch workspace e+1";
+        # "on-scroll-down" = "hyprctl dispatch workspace e-1";
         "format-icons" = {
           "urgent" = "";
           "default" = "";
@@ -42,7 +42,7 @@
       };
 
       "clock" = {
-        "format-alt" = "{:%I:%M %p  %A %b %d}";
+        "format-alt" = "{:%H:%M | %A %b %d}";
       };
 
       "network" = {
