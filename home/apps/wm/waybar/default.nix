@@ -6,23 +6,23 @@
       "layer" = "top";
       "position" = "top";
       "height" = 28;
-      "modules-lef" = [ "hyprland/workspaces" ];
+      "modules-left" = [ "custom/rofi" "hyprland/workspaces" ];
       "modules-center" = [ "clock" ];
       "modules-right" = [ "pulseaudio" "network" "tray" ];
       
-      # "custom/rofi" = {
-      #   "format" = "";
-      #   "on-click" = "rofi -show drun";
-      # };
+      "custom/rofi" = {
+        "format" = "";
+        "on-click" = "rofi -show drun";
+      };
 
       "hyprland/workspaces" = {
         "on-click" = "active";
         "format" = "<sub>{icon}</sub>";
         "all-outputs" = "false";
-        # "on-scroll-up" = "hyprctl dispatch workspace e+1";
-        # "on-scroll-down" = "hyprctl dispatch workspace e-1";
+        "on-scroll-up" = "hyprctl dispatch workspace e+1";
+        "on-scroll-down" = "hyprctl dispatch workspace e-1";
         "format-icons" = {
-          "urgent" = "";
+          "active" = "";
           "default" = "";
         };
         "persistent_workspaces" = {
@@ -31,7 +31,7 @@
       };
 
       "pulseaudio" = {
-        "format" = "{icon} {volume}%";
+        "format" = "{icon}  {volume}%";
         "format-muted" = "󰖁 Muted";
         "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         "on-click-right" = "pavucontrol";
@@ -47,7 +47,7 @@
 
       "network" = {
         "format-disconnected" = "󰖪 Disconnected";
-        "format-ethernet" = "󰈀 Connected";
+        "format-ethernet" = "󰈀  Connected";
         "format-linked" = "󰖪 {essid} (No IP)";
         "format-wifi" = "󰖩 {essid}";
         "interval" = 1;

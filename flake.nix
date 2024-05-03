@@ -11,10 +11,10 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ags.url = "github:Aylur/ags";
+    catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ...}@inputs:
+  outputs = { self, nixpkgs, home-manager, catppuccin, ...}@inputs:
   let 
     inherit (self) outputs;
     system = "x86_64-linux";
@@ -30,7 +30,10 @@
       deadeyez = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit inputs outputs; };
-        modules = [ ./home/home.nix ];
+        modules = [ 
+          ./home/home.nix
+          catppuccin.homeManagerModules.catppuccin
+        ];
       };
     };
   };

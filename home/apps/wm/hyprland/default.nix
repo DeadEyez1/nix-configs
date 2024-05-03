@@ -84,6 +84,8 @@
       }
 
       $mainMod = SUPER
+
+      bind = , Print, exec, grim -g "$(slurp -d)" - | wl-copy
       
       bind = $mainMod, F, exec, librewolf
       bind = $mainMod, Q, exec, kitty

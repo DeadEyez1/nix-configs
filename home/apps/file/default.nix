@@ -7,7 +7,7 @@
     p7zip
     rar
     xarchiver
-    kdePackages.dolphin
+    xfce.thunar
 
     motrix
   ];
