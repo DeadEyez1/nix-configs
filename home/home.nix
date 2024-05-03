@@ -4,6 +4,7 @@
 
   imports = [
     ./apps
+    ./wm
   ];
 
   home = {
