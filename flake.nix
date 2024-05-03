@@ -12,7 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
-    ags.url = "github:Aylur/ags";
   };
 
   outputs = { self, nixpkgs, home-manager, catppuccin, ...}@inputs:
