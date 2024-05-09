@@ -8,5 +8,6 @@
     vscodium
     devbox
     gnupg
+    python3
   ];
 }

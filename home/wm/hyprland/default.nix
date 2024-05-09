@@ -16,8 +16,6 @@
       # Autostart apps
       exec-once = dunst
       exec-once = waybar
-
-      exec-once = hyprctl setcursor Bibata-Modern-Ice 24
       
       input {
         kb_layout = us
@@ -89,7 +87,7 @@
       
       bind = $mainMod, F, exec, librewolf
       bind = $mainMod, Q, exec, kitty
-      bind = $mainMod, E, exec, dolphin
+      bind = $mainMod, E, exec, thunar
       bind = $mainMod, V, togglefloating
       bind = $mainMod, A, exec, rofi -show drun
       bind = CTRL_SHIFT, Q, killactive
@@ -126,6 +124,10 @@
       bindm = $mainMod, mouse:272, movewindow
       bindm = $mainMod, mouse:273, resizewindow
 
+      # Media bind (that FN+something)
+      bind =, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+      bind =, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+      
     '';
   };
 }

@@ -59,7 +59,7 @@
   users.users.deadeyez = {
     isNormalUser = true;
     description = "DeadEyez";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "libvirtd" "kvm" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "libvirtd" "kvm" "docker" ];
     shell = pkgs.zsh;
   };
 
@@ -95,11 +95,13 @@
 
   programs.virt-manager.enable = true;
   virtualisation = {
+    docker.enable = true;
     containers.enable = true;
     spiceUSBRedirection.enable = true;
     podman = {
       enable = true;
       defaultNetwork.settings.dns_enabled = true;
+      networkSocket.openFirewall = true;
     };
     waydroid.enable = true;
     libvirtd.enable = true;
@@ -156,7 +158,10 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 7777 9993 9994 ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

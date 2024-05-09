@@ -12,6 +12,7 @@
     ffmpeg
     premid
     vlc
+    libsForQt5.gwenview
   ];
   
 }

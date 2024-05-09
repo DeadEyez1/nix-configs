@@ -9,6 +9,7 @@
     protonup-qt
     adwsteamgtk
 
-    dotnetCorePackages.sdk_8_0_1xx
+    zerotierone
+    dotnetCorePackages.sdk_8_0
   ];
 }

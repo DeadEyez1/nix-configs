@@ -8,6 +8,7 @@
     rar
     xarchiver
     xfce.thunar
+    gedit
 
     motrix
   ];

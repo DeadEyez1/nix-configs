@@ -31,7 +31,6 @@
     border: none;
     border-radius: 0;
     font-family: FiraCode Nerd Font;
-    /* font-size: 13px; */
     min-height: 0;
 }
 
@@ -42,4 +41,9 @@ window#waybar {
 
 #network, #pulseaudio, #tray {
     padding: 0 10px;
+}
+
+#workspaces button {
+    padding: 0 0.5em;
+    margin: 0.25em;
 }

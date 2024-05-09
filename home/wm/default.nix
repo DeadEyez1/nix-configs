@@ -14,6 +14,7 @@
     lightly-qt
     libsForQt5.qt5ct
     qt6Packages.qt6ct
+    catppuccin-qt5ct
 
     grim
     slurp

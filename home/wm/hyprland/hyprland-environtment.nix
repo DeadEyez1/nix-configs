@@ -1,7 +1,5 @@
 {config, pkgs, inputs, ...}:
-{
-  xdg.enable = true;
-  
+{  
   home = {
     sessionVariables = {
       BROWSER = "librewolf";
@@ -22,12 +20,14 @@
 
   gtk = {
     enable = true;
-    catppuccin = {
-      enable = true;
-      flavour = "mocha";
-      accent = "blue";
-      size = "standard";
-      tweaks = [ "normal" ];
+    theme = {
+      name = "Catppuccin-Mocha-Compact-Blue-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = ["blue"];
+        tweaks = ["normal"];
+        size = "compact";
+        variant = "mocha";
+      };
     };
 
     iconTheme = {
