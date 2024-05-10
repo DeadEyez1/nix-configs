@@ -9,5 +9,7 @@
     devbox
     gnupg
     python3
+
+    tmux
   ];
 }

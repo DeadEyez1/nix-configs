@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -24,8 +24,15 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    trusted-users = [ "root" "deadeyez" ];
+    # Enable flakes
+    experimental-features = [ "nix-command" "flakes" ];
+
+    # Cachix for hyprland
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Jakarta";
@@ -77,10 +84,6 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-  };
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
   };
 
   hardware.opengl.driSupport32Bit = true;

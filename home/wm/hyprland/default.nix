@@ -4,10 +4,14 @@
   imports = [
     ./hyprland-environtment.nix
   ];
+
+  home.packages = with pkgs; [ hyprpaper ];
   
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+
+    # TODO change to nix syntax
     extraConfig = ''
 
       # See https://wiki.hyprland.org/Configuring/Monitors/
@@ -16,6 +20,7 @@
       # Autostart apps
       exec-once = dunst
       exec-once = waybar
+      exec-once = hyprpaper
       
       input {
         kb_layout = us
@@ -117,8 +122,8 @@
       bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
       # Scroll through existing workspaces with mainMod + scroll
-      bind = $mainMod, mouse_down, workspace, e+1
-      bind = $mainMod, mouse_up, workspace, e-1
+      bind = $mainMod, mouse_down, workspace, e-1
+      bind = $mainMod, mouse_up, workspace, e+1
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = $mainMod, mouse:272, movewindow

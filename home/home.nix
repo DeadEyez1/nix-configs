@@ -23,7 +23,9 @@
         "x-scheme-handler/https" = "librewolf.desktop";
         "x-scheme-handler/about" = "librewolf.desktop";
         "x-scheme-handler/unknown" = "librewolf.desktop";
-        "image/png" = "gwenview.desktop";
+        "image/jpg" = "org.gnome.eog.desktop;userapp-eog-D662M2.desktop";
+        "image/png" = "org.gnome.eog.desktop;userapp-eog-D662M2.desktop";
+        "image/jpeg" = "org.gnome.eog.desktop;userapp-eog-D662M2.desktop";
       };
     };
   };

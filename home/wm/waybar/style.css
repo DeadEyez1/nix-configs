@@ -36,14 +36,13 @@
 
 window#waybar {
     background-color: shade(@base, 0.9);
-    border: 2px solid alpha(@crust, 0.3);
 }
 
 #network, #pulseaudio, #tray {
-    padding: 0 10px;
+    padding-right: 10px;
 }
 
 #workspaces button {
-    padding: 0 0.5em;
-    margin: 0.25em;
+    padding: 5px;
+    margin-right: 5px;
 }
