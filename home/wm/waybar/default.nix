@@ -7,9 +7,9 @@
       "layer" = "top";
       "position" = "top";
       "height" = 28;
-      # "modules-left" = [ "hyprland/workspaces" ];
+      "modules-left" = [ "hyprland/workspaces" "hyprland/window" ];
       "modules-center" = [ "clock" ];
-      "modules-right" = [ "pulseaudio" "pulseaudio#microphone" "network" "tray" ];
+      "modules-right" = [ "tray" "pulseaudio" "pulseaudio#microphone" "network" ];
 
       "hyprland/workspaces" = {
         # "on-click" = "active";
@@ -18,12 +18,17 @@
         "on-scroll-up" = "hyprctl dispatch workspace e-1";
         "on-scroll-down" = "hyprctl dispatch workspace e+1";
         "format-icons" = {
-          "active" = "";
-          "default" = "";
+          "active" = "󰮯";
+          "default" = "󱙝";
+          "urgent" = "󰊠";
         };
         "persistent_workspaces" = {
           "*" = 4;
         };
+      };
+      "hyprland/window" = {
+        "format" = "> {class}";
+        "separate-outputs" = true;
       };
 
       "pulseaudio" = {
@@ -43,11 +48,10 @@
         "format-source-muted" = "";
         "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         "scroll-step" = 2;
-        "tooltip" = true;
       };
 
       "clock" = {
-        "format-alt" = "{:%H:%M | %A %b %d}";
+        "format-alt" = "{:%A %b %d | %H:%M}";
       };
 
       "network" = {

@@ -12,8 +12,10 @@
     ffmpeg
     premid
     vlc
-    libsForQt5.gwenview
     gnome.eog
+    playerctl
+
+    flameshot
   ];
   
 }

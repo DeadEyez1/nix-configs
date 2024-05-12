@@ -42,7 +42,16 @@ window#waybar {
     padding-right: 10px;
 }
 
+#workspaces {
+    padding: 0 10px;
+}
+
 #workspaces button {
-    padding: 5px;
-    margin-right: 5px;
+    color: @blue;
+    padding: 0px
+}
+
+#workspaces button.active {
+    color: @blue;
+    margin: 0 5px;
 }

@@ -9,4 +9,8 @@
     ./multimedia
     ./games
   ];
+
+  home.packages = with pkgs; [
+    gnome.gnome-calculator
+  ];
 }

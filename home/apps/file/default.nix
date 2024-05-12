@@ -7,7 +7,7 @@
     p7zip
     rar
     xarchiver
-    xfce.thunar
+    gnome.nautilus
     gedit
 
     motrix

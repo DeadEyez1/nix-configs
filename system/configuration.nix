@@ -122,6 +122,7 @@
     fira-code
     fira-code-symbols
     fira-code-nerdfont
+    material-design-icons
   ];
 
   # Allow unfree packages

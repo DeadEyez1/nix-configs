@@ -3,6 +3,7 @@
   imports = [
     ./hyprland
     ./waybar
+    ./ags
   ];
 
   home.packages = with pkgs; [

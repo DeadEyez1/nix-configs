@@ -35,7 +35,7 @@
 
       general {
         gaps_in = 5
-        gaps_out = 20
+        gaps_out = 10
         border_size = 1
         col.active_border = rgb(89b4fa)
         col.inactive_border = rgb(bac2de)
@@ -92,7 +92,7 @@
       
       bind = $mainMod, F, exec, librewolf
       bind = $mainMod, Q, exec, kitty
-      bind = $mainMod, E, exec, thunar
+      bind = $mainMod, E, exec, nautilus
       bind = $mainMod, V, togglefloating
       bind = $mainMod, A, exec, rofi -show drun
       bind = CTRL_SHIFT, Q, killactive
@@ -130,8 +130,15 @@
       bindm = $mainMod, mouse:273, resizewindow
 
       # Media bind (that FN+something)
-      bind =, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-      bind =, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+      bindle =, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+      bindle =, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+      bindl =, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+      bindl =, XF86AudioPlay, exec, playerctl play-pause
+      bindl =, XF86AudioNext, exec, playerctl next 
+      bindl =, XF86AudioPrev, exec, playerctl previous
+
+      bind =, XF86Tools, exec, spotify
+      bind =, XF86Calculator, exec, gnome-calculator
       
     '';
   };
