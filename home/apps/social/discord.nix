@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    (discord.override {
+    (discord-canary.override {
       withOpenASAR = true;
       withVencord = true;
     })
