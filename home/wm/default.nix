@@ -12,13 +12,16 @@
     pavucontrol
     libnotify
 
-    lightly-qt
-    libsForQt5.qt5ct
-    qt6Packages.qt6ct
+    # IDK wich one of this needed for QT apps
+    catppuccin-kvantum
     catppuccin-qt5ct
+    qt6.qtwayland
+    qt5.qtwayland
 
     grim
     slurp
     wl-clipboard
+    wl-clip-persist
+    cliphist
   ];
 }
