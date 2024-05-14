@@ -9,7 +9,7 @@
       "height" = 28;
       "modules-left" = [ "hyprland/workspaces" "hyprland/window" ];
       "modules-center" = [ "clock" ];
-      "modules-right" = [ "tray" "pulseaudio" "pulseaudio#microphone" "network" ];
+      "modules-right" = [ "tray" "group/audio" "network" ];
 
       "hyprland/workspaces" = {
         # "on-click" = "active";
@@ -31,6 +31,11 @@
         "separate-outputs" = true;
       };
 
+      "group/audio" = {
+        "orientation" = "horizontal";
+        "modules" = [ "pulseaudio" "pulseaudio#mic" ];
+      };
+
       "pulseaudio" = {
         "format" = "{icon}  {volume}%";
         "format-muted" = "  Muted";
@@ -40,14 +45,16 @@
         "format-icons" = {
           "default" = [ "" "" "" ];
         };
+        "ignored-sinks" = ["Easy Effects Sink"];
       };
 
-      "pulseaudio#microphone" = {
+      "pulseaudio#mic" = {
         "format" = "{format_source}";
         "format-source" = " {volume}%";
-        "format-source-muted" = "";
+        "format-source-muted" = "  Muted";
         "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         "scroll-step" = 2;
+        "ignored-source" = ["Easy Effects Source"];
       };
 
       "clock" = {
@@ -59,8 +66,9 @@
         "format-ethernet" = "󰈀 Connected";
         "format-linked" = "󰖪 {essid} (No IP)";
         "format-wifi" = "󰖩 {essid}";
+        "format-alt" = "  {bandwidthUpBytes}    {bandwidthDownBytes}";
         "interval" = 1;
-        "tooltip" = false;
+        "tooltip" = true;
       };
 
       "tray" = {

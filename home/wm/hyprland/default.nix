@@ -15,13 +15,14 @@
     extraConfig = ''
 
       # See https://wiki.hyprland.org/Configuring/Monitors/
-      monitor=,preferred,auto,auto
-
+      monitor=,preferred,auto,1
+    
       # Autostart apps
       exec-once = dunst
       exec-once = waybar
       exec-once = hyprpaper
-      
+      exec-once = ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
+  
       input {
         kb_layout = us
         kb_variant = 
@@ -36,7 +37,7 @@
       general {
         gaps_in = 5
         gaps_out = 10
-        border_size = 1
+        border_size = 2
         col.active_border = rgb(89b4fa)
         col.inactive_border = rgb(bac2de)
 
@@ -45,14 +46,17 @@
 
       decoration {
         rounding = 8
-
-        # Why this is not work??
-        # blur = {
-        #   enabled = true
-        #   size = 3
-        #   passes = 1
-        #   new_optimizations = on
-        # }
+        inactive_opacity = 0.7
+        
+        # hy this is not work??
+        blur {
+          xray = true
+          enabled = true
+          size = 3
+          passes = 1
+          ignore_opacity = true
+          new_optimizations = on
+        }
         
         # drop_shadow = true
         # shadow_range = 5
@@ -89,13 +93,18 @@
       $mainMod = SUPER
 
       bind = , Print, exec, grim -g "$(slurp -d)" - | wl-copy
+      exec-once = wl-paste --type text --watch cliphist store
+      exec-once = wl-paste --type image --watch cliphist store
       
       bind = $mainMod, F, exec, librewolf
       bind = $mainMod, Q, exec, kitty
       bind = $mainMod, E, exec, nautilus
-      bind = $mainMod, V, togglefloating
+      bind = $mainMod, D, togglefloating
       bind = $mainMod, A, exec, rofi -show drun
       bind = CTRL_SHIFT, Q, killactive
+      bind = $mainMod, M, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+      bind = $mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
       # Switch workspaces
       bind = $mainMod, 1, workspace, 1
@@ -124,6 +133,9 @@
       # Scroll through existing workspaces with mainMod + scroll
       bind = $mainMod, mouse_down, workspace, e-1
       bind = $mainMod, mouse_up, workspace, e+1
+      
+      bind = $mainMod, Left, workspace, e-1
+      bind = $mainMod, Right, workspace, e+1
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = $mainMod, mouse:272, movewindow
@@ -139,7 +151,9 @@
 
       bind =, XF86Tools, exec, spotify
       bind =, XF86Calculator, exec, gnome-calculator
-      
+
+      unbind = W, D, H
+
     '';
   };
 }

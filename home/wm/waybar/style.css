@@ -38,7 +38,7 @@ window#waybar {
     background-color: shade(@base, 0.9);
 }
 
-#network, #pulseaudio, #tray {
+#network, #pulseaudio, #tray, #pulseaudio.mic.format-source-muted {
     padding-right: 10px;
 }
 
@@ -54,4 +54,8 @@ window#waybar {
 #workspaces button.active {
     color: @blue;
     margin: 0 5px;
+}
+
+#group-audio {
+    padding-right: 10px;
 }
