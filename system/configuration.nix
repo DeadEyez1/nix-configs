@@ -81,9 +81,22 @@
     pulse.enable = true;
   };
 
-  services.displayManager.sddm = {
+  # I set it up later, if i could
+  # services.greetd = {
+  #  enable = true;
+  #  package = [ pkgs.greetd.regreet ];
+  #  settings = {
+  #    default_session = {
+  #      command = "${pkgs.hyprland}/bin/Hyprland";
+  #    };
+  #  };
+  #};
+
+  services.flatpak.enable = true;
+  xdg.portal = {
     enable = true;
-    wayland.enable = true;
+    config = { common = { default = [ "hyprland" ]; }; };
+    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
   };
 
   hardware.opengl.driSupport32Bit = true;
@@ -107,6 +120,7 @@
       networkSocket.openFirewall = true;
     };
     waydroid.enable = true;
+    lxd.enable = true;
     libvirtd.enable = true;
   };
 
@@ -135,10 +149,10 @@
   #  wget
     kitty
     xdg-utils
-    xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     adwaita-qt
     adwaita-qt6
+    polkit_gnome
 
     dive 
     podman-tui
@@ -165,6 +179,7 @@
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 7777 9993 9994 ];
+    allowedUDPPorts = [ 53 67 ];
   };
 
   # This value determines the NixOS release from which the default
