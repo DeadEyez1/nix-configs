@@ -8,6 +8,11 @@
       XDG_CURRENT_DESKTOP = "Hyprland";
       XDG_SESSION_DESKTOP = "Hyprland";
       XDG_SESSION_TYPE = "wayland";
+
+      GDK_BACKEND = "wayland";
+      GTK_USE_PORTAL = "1";
+      QT_QPA_PLATFORM = "wayland";
+      MOZ_ENABLE_WAYLAND = "1";
     };
     pointerCursor = {
       x11.enable = true;
@@ -33,6 +38,15 @@
     iconTheme = {
       package = pkgs.gnome.adwaita-icon-theme;
       name = "Adwaita";
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+    style = {
+      package = pkgs.catppuccin-kvantum;
+      name = "kvantum";
     };
   };
 }
