@@ -13,8 +13,9 @@
     stateVersion = "23.11";
   };
 
+  # config.services.flatpak.enable = true;
+
   xdg = {
-    enable = true;
     mimeApps = {
       enable = true;
       defaultApplications = {
@@ -28,11 +29,6 @@
         "image/jpeg" = "org.gnome.eog.desktop;userapp-eog-D662M2.desktop";
       };
     };
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct";
   };
 
   programs.home-manager.enable = true;
