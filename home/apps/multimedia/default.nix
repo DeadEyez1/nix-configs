@@ -14,6 +14,7 @@
     vlc
     gnome.eog
     playerctl
+    obs-studio
 
     flameshot
   ];
