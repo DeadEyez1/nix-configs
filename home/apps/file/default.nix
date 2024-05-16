@@ -8,8 +8,7 @@
     rar
     xarchiver
     gnome.nautilus
-    gedit
-
+    
     motrix
   ];
 }

@@ -6,5 +6,6 @@
     vesktop
     ferdium
     telegram-desktop
+    chatterino2
   ];
 }

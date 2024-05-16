@@ -39,7 +39,7 @@
         gaps_out = 10
         border_size = 2
         col.active_border = rgb(89b4fa)
-        col.inactive_border = rgb(bac2de)
+        col.inactive_border = rgb(#c7086)
 
         layout = dwindle
       }
@@ -48,12 +48,11 @@
         rounding = 8
         inactive_opacity = 0.7
         
-        # hy this is not work??
         blur {
-          xray = true
+          xray = false
           enabled = true
-          size = 3
-          passes = 1
+          size = 5
+          passes = 3
           ignore_opacity = true
           new_optimizations = on
         }
@@ -90,6 +89,8 @@
         workspace_swipe = false
       }
 
+      windowrulev2 = float,class:(kitty),title:(kitty)
+      
       $mainMod = SUPER
 
       bind = , Print, exec, grim -g "$(slurp -d)" - | wl-copy
@@ -117,6 +118,9 @@
       bind = $mainMod, 8, workspace, 8
       bind = $mainMod, 9, workspace, 9
       bind = $mainMod, 0, workspace, 10
+
+      bind = SUPER,Tab,cyclenext,
+      bind = SUPER,Tab,bringactivetotop,
 
       # Move active window to a workspace
       bind = $mainMod SHIFT, 1, movetoworkspace, 1
