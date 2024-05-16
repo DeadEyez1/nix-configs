@@ -1,7 +1,6 @@
 { pkgs, config, inputs, ...}: {
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
     autosuggestion.enable = true;
   };
 
@@ -15,6 +14,9 @@
     theme = "Catppuccin-Mocha";
     settings = {
       enable_audio_bell = false;
+    };
+    environment = {
+      "EDITOR" = "nano";
     };
   };
 
