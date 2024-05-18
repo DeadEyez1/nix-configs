@@ -21,8 +21,7 @@
       exec-once = dunst
       exec-once = waybar
       exec-once = hyprpaper
-      exec-once = ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
-  
+       
       input {
         kb_layout = us
         kb_variant = 

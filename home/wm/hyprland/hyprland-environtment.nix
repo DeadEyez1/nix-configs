@@ -11,6 +11,7 @@
 
       GDK_BACKEND = "wayland";
       GTK_USE_PORTAL = "1";
+      POLKIT_AUTH_AGENT = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
       QT_QPA_PLATFORM = "wayland";
       MOZ_ENABLE_WAYLAND = "1";
     };
@@ -43,10 +44,15 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "qtct";
     style = {
-      package = pkgs.catppuccin-kvantum;
-      name = "kvantum";
+      package = (pkgs.catppuccin-kvantum.override {
+        accent = "Blue";
+        variant = "Mocha";
+      });
+      name = "kvantum-dark";
     };
   };
+
+  xdg.configFile."Kvantum/kvantum.kvconfig".source = (pkgs.formats.ini { }).generate "kvantum.kvconfig" { General.theme = "Catppuccin-Mocha-Blue"; };
 }

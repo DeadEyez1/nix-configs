@@ -13,10 +13,13 @@
     libnotify
 
     # IDK wich one of this needed for QT apps
-    catppuccin-kvantum
-    catppuccin-qt5ct
+    libsForQt5.qtstyleplugin-kvantum
+    libsForQt5.qt5ct
     qt6.qtwayland
     qt5.qtwayland
+
+    lxqt.lxqt-policykit
+    polkit_gnome
 
     grim
     slurp
