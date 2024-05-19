@@ -66,7 +66,7 @@
   users.users.deadeyez = {
     isNormalUser = true;
     description = "DeadEyez";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "libvirtd" "kvm" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "libvirtd" "kvm" "docker" "adbusers" ];
     shell = pkgs.zsh;
   };
 
